@@ -1,4 +1,4 @@
-local zephyr = {
+local deus = {
   base0      = '#1B2229';
   base1      = '#1c1f24';
   base2      = '#202328';
@@ -78,26 +78,26 @@ local zephyr = {
   none = 'NONE';
 }
 
-function zephyr.terminal_color()
-  vim.g.terminal_color_0 = zephyr.black
-  vim.g.terminal_color_1 = zephyr.red_dark
-  vim.g.terminal_color_2 = zephyr.green_dark
-  vim.g.terminal_color_3 = zephyr.orange
-  vim.g.terminal_color_4 = zephyr.blue
-  vim.g.terminal_color_5 = zephyr.magenta_dark
-  vim.g.terminal_color_6 = zephyr.teal
-  vim.g.terminal_color_7 = zephyr.gray
-  vim.g.terminal_color_8 = zephyr.gray_dark
-  vim.g.terminal_color_9 = zephyr.red
-  vim.g.terminal_color_10 = zephyr.green
-  vim.g.terminal_color_11 = zephyr.yellow
-  vim.g.terminal_color_12 = zephyr.turqoise
-  vim.g.terminal_color_13 = zephyr.purple
-  vim.g.terminal_color_14 = zephyr.cyan
-  vim.g.terminal_color_15 = zephyr.gray_light
+function deus.terminal_color()
+  vim.g.terminal_color_0 = deus.black
+  vim.g.terminal_color_1 = deus.red_dark
+  vim.g.terminal_color_2 = deus.green_dark
+  vim.g.terminal_color_3 = deus.orange
+  vim.g.terminal_color_4 = deus.blue
+  vim.g.terminal_color_5 = deus.magenta_dark
+  vim.g.terminal_color_6 = deus.teal
+  vim.g.terminal_color_7 = deus.gray
+  vim.g.terminal_color_8 = deus.gray_dark
+  vim.g.terminal_color_9 = deus.red
+  vim.g.terminal_color_10 = deus.green
+  vim.g.terminal_color_11 = deus.yellow
+  vim.g.terminal_color_12 = deus.turqoise
+  vim.g.terminal_color_13 = deus.purple
+  vim.g.terminal_color_14 = deus.cyan
+  vim.g.terminal_color_15 = deus.gray_light
 end
 
-function zephyr.highlight(group, color)
+function deus.highlight(group, color)
     local style = color.style and 'gui=' .. color.style or 'gui=NONE'
     local fg = color.fg and 'guifg=' .. color.fg or 'guifg=NONE'
     local bg = color.bg and 'guibg=' .. color.bg or 'guibg=NONE'
@@ -107,207 +107,207 @@ function zephyr.highlight(group, color)
 end
 
 
-function zephyr.load_syntax()
+function deus.load_syntax()
   local syntax = {
-    Normal = {fg = zephyr.fg,bg=zephyr.bg};
-    Terminal = {fg = zephyr.fg,bg=zephyr.bg};
-    SignColumn = {fg=zephyr.fg,bg=zephyr.bg};
-    FoldColumn = {fg=zephyr.fg_alt,bg=zephyr.black};
-    VertSplit = {fg=zephyr.black,bg=zephyr.bg};
-    Folded = {fg=zephyr.gray,bg=zephyr.bg_highlight};
-    EndOfBuffer = {fg=zephyr.bg,bg=zephyr.none};
-    IncSearch = {fg=zephyr.bg1,bg=zephyr.orange,style=zephyr.none};
-    Search = {fg=zephyr.bg,bg=zephyr.orange};
-    ColorColumn = {fg=zephyr.none,bg=zephyr.bg_highlight};
-    Conceal = {fg=zephyr.gray,bg=zephyr.none};
-    Cursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
-    vCursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
-    iCursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
-    lCursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
-    CursorIM = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
-    CursorColumn = {fg=zephyr.none,bg=zephyr.bg_highlight};
-    CursorLine = {fg=zephyr.none,bg=zephyr.bg_highlight};
-    LineNr = {fg=zephyr.base4};
-    qfLineNr = {fg=zephyr.cyan};
-    CursorLineNr = {fg=zephyr.blue};
-    DiffAdd = {fg=zephyr.black,bg=zephyr.green_dark};
-    DiffChange = {fg=zephyr.black,bg=zephyr.yellow};
-    DiffDelete = {fg=zephyr.black,bg=zephyr.red};
-    DiffText = {fg=zephyr.black,bg=zephyr.fg};
-    Directory = {fg=zephyr.blue,bg=zephyr.none};
-    ErrorMsg = {fg=zephyr.red,bg=zephyr.none,style='bold'};
-    WarningMsg = {fg=zephyr.yellow,bg=zephyr.none,style='bold'};
-    ModeMsg = {fg=zephyr.fg,bg=zephyr.none,style='bold'};
-    MatchParen = {fg=zephyr.orange,bg=zephyr.gray,style='bold'};
-    NonText = {fg=zephyr.bg1};
-    Whitespace = {fg=zephyr.base4};
-    SpecialKey = {fg=zephyr.bg1};
-    Pmenu = {fg=zephyr.fg,bg=zephyr.bg_popup};
-    PmenuSel = {fg=zephyr.base0,bg=zephyr.blue};
-    PmenuSelBold = {fg=zephyr.base0,g=zephyr.blue};
-    PmenuSbar = {fg=zephyr.none,bg=zephyr.base4};
-    PmenuThumb = {fg=zephyr.pink,bg=zephyr.green_light};
-    WildMenu = {fg=zephyr.fg,bg=zephyr.green};
-    Question = {fg=zephyr.yellow};
-    NormalFloat = {fg=zephyr.base8,bg=zephyr.bg_highlight};
-    Tabline = {fg=zephyr.base6,bg=zephyr.base2};
-    TabLineFill = {style=zephyr.none};
-    TabLineSel = {fg=zephyr.fg,bg=zephyr.blue};
-    StatusLine = {fg=zephyr.base8,bg=zephyr.base2,style=zephyr.none};
-    StatusLineNC = {fg=zephyr.gray,bg=zephyr.base2,style=zephyr.none};
-    SpellBad = {fg=zephyr.red,bg=zephyr.none,style='undercurl'};
-    SpellCap = {fg=zephyr.blue,bg=zephyr.none,style='undercurl'};
-    SpellLocal = {fg=zephyr.cyan,bg=zephyr.none,style='undercurl'};
-    SpellRare = {fg=zephyr.pink,bg=zephyr.none,style = 'undercurl'};
+    Normal = {fg = deus.fg,bg=deus.bg};
+    Terminal = {fg = deus.fg,bg=deus.bg};
+    SignColumn = {fg=deus.fg,bg=deus.bg};
+    FoldColumn = {fg=deus.fg_alt,bg=deus.black};
+    VertSplit = {fg=deus.black,bg=deus.bg};
+    Folded = {fg=deus.gray,bg=deus.bg_highlight};
+    EndOfBuffer = {fg=deus.bg,bg=deus.none};
+    IncSearch = {fg=deus.bg1,bg=deus.orange,style=deus.none};
+    Search = {fg=deus.bg,bg=deus.orange};
+    ColorColumn = {fg=deus.none,bg=deus.bg_highlight};
+    Conceal = {fg=deus.gray,bg=deus.none};
+    Cursor = {fg=deus.none,bg=deus.none,style='reverse'};
+    vCursor = {fg=deus.none,bg=deus.none,style='reverse'};
+    iCursor = {fg=deus.none,bg=deus.none,style='reverse'};
+    lCursor = {fg=deus.none,bg=deus.none,style='reverse'};
+    CursorIM = {fg=deus.none,bg=deus.none,style='reverse'};
+    CursorColumn = {fg=deus.none,bg=deus.bg_highlight};
+    CursorLine = {fg=deus.none,bg=deus.bg_highlight};
+    LineNr = {fg=deus.base4};
+    qfLineNr = {fg=deus.cyan};
+    CursorLineNr = {fg=deus.blue};
+    DiffAdd = {fg=deus.black,bg=deus.green_dark};
+    DiffChange = {fg=deus.black,bg=deus.yellow};
+    DiffDelete = {fg=deus.black,bg=deus.red};
+    DiffText = {fg=deus.black,bg=deus.fg};
+    Directory = {fg=deus.blue,bg=deus.none};
+    ErrorMsg = {fg=deus.red,bg=deus.none,style='bold'};
+    WarningMsg = {fg=deus.yellow,bg=deus.none,style='bold'};
+    ModeMsg = {fg=deus.fg,bg=deus.none,style='bold'};
+    MatchParen = {fg=deus.orange,bg=deus.gray,style='bold'};
+    NonText = {fg=deus.bg1};
+    Whitespace = {fg=deus.base4};
+    SpecialKey = {fg=deus.bg1};
+    Pmenu = {fg=deus.fg,bg=deus.bg_popup};
+    PmenuSel = {fg=deus.base0,bg=deus.blue};
+    PmenuSelBold = {fg=deus.base0,g=deus.blue};
+    PmenuSbar = {fg=deus.none,bg=deus.base4};
+    PmenuThumb = {fg=deus.pink,bg=deus.green_light};
+    WildMenu = {fg=deus.fg,bg=deus.green};
+    Question = {fg=deus.yellow};
+    NormalFloat = {fg=deus.base8,bg=deus.bg_highlight};
+    Tabline = {fg=deus.base6,bg=deus.base2};
+    TabLineFill = {style=deus.none};
+    TabLineSel = {fg=deus.fg,bg=deus.blue};
+    StatusLine = {fg=deus.base8,bg=deus.base2,style=deus.none};
+    StatusLineNC = {fg=deus.gray,bg=deus.base2,style=deus.none};
+    SpellBad = {fg=deus.red,bg=deus.none,style='undercurl'};
+    SpellCap = {fg=deus.blue,bg=deus.none,style='undercurl'};
+    SpellLocal = {fg=deus.cyan,bg=deus.none,style='undercurl'};
+    SpellRare = {fg=deus.pink,bg=deus.none,style = 'undercurl'};
     Visual = {style='inverse'};
     VisualNOS = {bg=gray_darker};
-    QuickFixLine = {fg=zephyr.pink,style='bold'};
-    Debug = {fg=zephyr.orange};
-    debugBreakpoint = {fg=zephyr.bg,bg=zephyr.red};
+    QuickFixLine = {fg=deus.pink,style='bold'};
+    Debug = {fg=deus.orange};
+    debugBreakpoint = {fg=deus.bg,bg=deus.red};
 
-    Boolean = {fg=zephyr.purple};
-    Number = {fg=zephyr.purple};
-    Float = {fg=zephyr.purple};
-    PreProc = {fg=zephyr.pink};
-    PreCondit = {fg=zephyr.tan};
-    Include = {fg=zephyr.blue};
-    Define = {fg=zephyr.blue};
-    Conditional = {fg=zephyr.red};
-    Repeat = {fg=zephyr.red};
-    Keyword = {fg=zephyr.red};
-    Typedef = {fg=zephyr.cyan};
-    Exception = {fg=zephyr.red, style='bold'};
-    Statement = {fg=zephyr.red};
-    Error = {fg=zephyr.red};
-    StorageClass = {fg=zephyr.orange};
-    Tag = {fg=zephyr.orange};
-    Label = {fg=zephyr.orange};
-    Structure = {fg=zephyr.blue, style='bold'};
-    Operator = {fg=zephyr.blue};
-    Title = {fg=zephyr.orange,style='bold'};
-    Special = {fg=zephyr.magenta};
-    SpecialChar = {fg=zephyr.red_light};
-    Type = {fg=zephyr.yellow};
-    Function = {fg=zephyr.green};
-    String = {fg=zephyr.green};
-    Character = {fg=zephyr.purple};
-    Constant = {fg=zephyr.orange_light};
-    Macro = {fg=zephyr.blue};
-    Identifier = {fg=zephyr.navyblue};
+    Boolean = {fg=deus.purple};
+    Number = {fg=deus.purple};
+    Float = {fg=deus.purple};
+    PreProc = {fg=deus.pink};
+    PreCondit = {fg=deus.tan};
+    Include = {fg=deus.blue};
+    Define = {fg=deus.blue};
+    Conditional = {fg=deus.red};
+    Repeat = {fg=deus.red};
+    Keyword = {fg=deus.red};
+    Typedef = {fg=deus.cyan};
+    Exception = {fg=deus.red, style='bold'};
+    Statement = {fg=deus.red};
+    Error = {fg=deus.red};
+    StorageClass = {fg=deus.orange};
+    Tag = {fg=deus.orange};
+    Label = {fg=deus.orange};
+    Structure = {fg=deus.blue, style='bold'};
+    Operator = {fg=deus.blue};
+    Title = {fg=deus.orange,style='bold'};
+    Special = {fg=deus.magenta};
+    SpecialChar = {fg=deus.red_light};
+    Type = {fg=deus.yellow};
+    Function = {fg=deus.green};
+    String = {fg=deus.green};
+    Character = {fg=deus.purple};
+    Constant = {fg=deus.orange_light};
+    Macro = {fg=deus.blue};
+    Identifier = {fg=deus.navyblue};
 
-    Comment = {fg=zephyr.base6};
-    SpecialComment = {fg=zephyr.gray};
-    Todo = {fg=zephyr.yellow};
-    Delimiter = {fg=zephyr.orange};
-    Ignore = {fg=zephyr.gray};
-    Underlined = {fg=zephyr.none,style='underline'};
+    Comment = {fg=deus.base6};
+    SpecialComment = {fg=deus.gray};
+    Todo = {fg=deus.yellow};
+    Delimiter = {fg=deus.orange};
+    Ignore = {fg=deus.gray};
+    Underlined = {fg=deus.none,style='underline'};
 
-    DashboardShortCut = {fg=zephyr.magenta};
-    DashboardHeader = {fg=zephyr.orange};
-    DashboardCenter = {fg=zephyr.cyan};
-    DashboardFooter = {fg=zephyr.yellow,style='bold'};
+    DashboardShortCut = {fg=deus.magenta};
+    DashboardHeader = {fg=deus.orange};
+    DashboardCenter = {fg=deus.cyan};
+    DashboardFooter = {fg=deus.yellow,style='bold'};
   }
   return syntax
 end
 
-function zephyr.load_plugin_syntax()
+function deus.load_plugin_syntax()
   local plugin_syntax = {
-    TSFunction = {fg=zephyr.green, style='bold'};
-    TSMethod = {fg=zephyr.cyan};
-    TSKeywordFunction = {fg=zephyr.red};
-    TSProperty = {fg=zephyr.yellow};
+    TSFunction = {fg=deus.green, style='bold'};
+    TSMethod = {fg=deus.cyan};
+    TSKeywordFunction = {fg=deus.red};
+    TSProperty = {fg=deus.yellow};
     TSType = {fg='#ebb12d'};
-    TSVariable = {fg=zephyr.navyblue};
-    TSPunctBracket = {fg=zephyr.orange};
+    TSVariable = {fg=deus.navyblue};
+    TSPunctBracket = {fg=deus.orange};
 
-    vimCommentTitle = {fg=zephyr.gray,style='bold'};
-    vimLet = {fg=zephyr.orange};
-    vimVar = {fg=zephyr.cyan};
-    vimFunction = {fg=zephyr.magenta};
-    vimIsCommand = {fg=zephyr.fg};
-    vimCommand = {fg=zephyr.blue};
-    vimNotFunc = {fg=zephyr.pink,style='bold'};
-    vimUserFunc = {fg=zephyr.yellow,style='bold'};
-    vimFuncName= {fg=zephyr.yellow,style='bold'};
+    vimCommentTitle = {fg=deus.gray,style='bold'};
+    vimLet = {fg=deus.orange};
+    vimVar = {fg=deus.cyan};
+    vimFunction = {fg=deus.magenta};
+    vimIsCommand = {fg=deus.fg};
+    vimCommand = {fg=deus.blue};
+    vimNotFunc = {fg=deus.pink,style='bold'};
+    vimUserFunc = {fg=deus.yellow,style='bold'};
+    vimFuncName= {fg=deus.yellow,style='bold'};
 
-    diffAdded = {fg = zephyr.green_dark};
-    diffRemoved = {fg =zephyr.red};
-    diffChanged = {fg = zephyr.blue};
-    diffOldFile = {fg = zephyr.yellow};
-    diffNewFile = {fg = zephyr.orange};
-    diffFile    = {fg = zephyr.aqua};
-    diffLine    = {fg = zephyr.gray};
-    diffIndexLine = {fg = zephyr.pink};
+    diffAdded = {fg = deus.green_dark};
+    diffRemoved = {fg =deus.red};
+    diffChanged = {fg = deus.blue};
+    diffOldFile = {fg = deus.yellow};
+    diffNewFile = {fg = deus.orange};
+    diffFile    = {fg = deus.aqua};
+    diffLine    = {fg = deus.gray};
+    diffIndexLine = {fg = deus.pink};
 
-    gitcommitSummary = {fg = zephyr.red};
-    gitcommitUntracked = {fg = zephyr.gray};
-    gitcommitDiscarded = {fg = zephyr.gray};
-    gitcommitSelected = { fg=zephyr.gray};
-    gitcommitUnmerged = { fg=zephyr.gray};
-    gitcommitOnBranch = { fg=zephyr.gray};
-    gitcommitArrow  = {fg = zephyr.gray};
-    gitcommitFile  = {fg = zephyr.green_dark};
+    gitcommitSummary = {fg = deus.red};
+    gitcommitUntracked = {fg = deus.gray};
+    gitcommitDiscarded = {fg = deus.gray};
+    gitcommitSelected = { fg=deus.gray};
+    gitcommitUnmerged = { fg=deus.gray};
+    gitcommitOnBranch = { fg=deus.gray};
+    gitcommitArrow  = {fg = deus.gray};
+    gitcommitFile  = {fg = deus.green_dark};
 
-    VistaBracket = {fg=zephyr.gray};
-    VistaChildrenNr = {fg=zephyr.orange};
-    VistaKind = {fg=zephyr.purpl};
-    VistaScope = {fg=zephyr.red};
-    VistaScopeKind = {fg=zephyr.blue};
-    VistaTag = {fg=zephyr.magenta,style='bold'};
-    VistaPrefix = {fg=zephyr.gray};
-    VistaColon = {fg=zephyr.magenta};
-    VistaIcon = {fg=zephyr.yellow};
-    VistaLineNr = {fg=zephyr.fg};
+    VistaBracket = {fg=deus.gray};
+    VistaChildrenNr = {fg=deus.orange};
+    VistaKind = {fg=deus.purpl};
+    VistaScope = {fg=deus.red};
+    VistaScopeKind = {fg=deus.blue};
+    VistaTag = {fg=deus.magenta,style='bold'};
+    VistaPrefix = {fg=deus.gray};
+    VistaColon = {fg=deus.magenta};
+    VistaIcon = {fg=deus.yellow};
+    VistaLineNr = {fg=deus.fg};
 
-    GitGutterAdd = {fg=zephyr.green_dark};
-    GitGutterChange = {fg=zephyr.blue};
-    GitGutterDelete = {fg=zephyr.red};
-    GitGutterChangeDelete = {fg=zephyr.pink};
+    GitGutterAdd = {fg=deus.green_dark};
+    GitGutterChange = {fg=deus.blue};
+    GitGutterDelete = {fg=deus.red};
+    GitGutterChangeDelete = {fg=deus.pink};
 
-    GitSignsAdd = {fg=zephyr.green_dark};
-    GitSignsChange = {fg=zephyr.blue};
-    GitSignsDelete = {fg=zephyr.red};
-    GitSignsAddNr = {fg=zephyr.green_dark};
-    GitSignsChangeNr = {fg=zephyr.blue};
-    GitSignsDeleteNr = {fg=zephyr.red};
-    GitSignsAddLn = {bg=zephyr.bg_popup};
-    GitSignsChangeLn = {bg=zephyr.bg_highlight};
-    GitSignsDeleteLn = {bg=zephyr.bg1};
+    GitSignsAdd = {fg=deus.green_dark};
+    GitSignsChange = {fg=deus.blue};
+    GitSignsDelete = {fg=deus.red};
+    GitSignsAddNr = {fg=deus.green_dark};
+    GitSignsChangeNr = {fg=deus.blue};
+    GitSignsDeleteNr = {fg=deus.red};
+    GitSignsAddLn = {bg=deus.bg_popup};
+    GitSignsChangeLn = {bg=deus.bg_highlight};
+    GitSignsDeleteLn = {bg=deus.bg1};
 
-    SignifySignAdd = {fg=zephyr.green_dark};
-    SignifySignChange = {fg=zephyr.blue};
-    SignifySignDelete = {fg=zephyr.red};
+    SignifySignAdd = {fg=deus.green_dark};
+    SignifySignChange = {fg=deus.blue};
+    SignifySignDelete = {fg=deus.red};
 
-    dbui_tables = {fg=zephyr.blue};
+    dbui_tables = {fg=deus.blue};
 
-    LspDiagnosticsSignError = {fg=zephyr.red};
-    LspDiagnosticsSignWarning = {fg=zephyr.yellow};
-    LspDiagnosticsSignInformation = {fg=zephyr.blue};
-    LspDiagnosticsSignHint = {fg=zephyr.cyan};
+    LspDiagnosticsSignError = {fg=deus.red};
+    LspDiagnosticsSignWarning = {fg=deus.yellow};
+    LspDiagnosticsSignInformation = {fg=deus.blue};
+    LspDiagnosticsSignHint = {fg=deus.cyan};
 
-    LspDiagnosticsVirtualTextError = {fg=zephyr.red};
-    LspDiagnosticsVirtualTextWarning= {fg=zephyr.yellow};
-    LspDiagnosticsVirtualTextInformation = {fg=zephyr.blue};
-    LspDiagnosticsVirtualTextHint = {fg=zephyr.cyan};
+    LspDiagnosticsVirtualTextError = {fg=deus.red};
+    LspDiagnosticsVirtualTextWarning= {fg=deus.yellow};
+    LspDiagnosticsVirtualTextInformation = {fg=deus.blue};
+    LspDiagnosticsVirtualTextHint = {fg=deus.cyan};
 
-    LspDiagnosticsUnderlineError = {style="undercurl",sp=zephyr.red};
-    LspDiagnosticsUnderlineWarning = {style="undercurl",sp=zephyr.yellow};
-    LspDiagnosticsUnderlineInformation = {style="undercurl",sp=zephyr.blue};
-    LspDiagnosticsUnderlineHint = {style="undercurl",sp=zephyr.cyan};
+    LspDiagnosticsUnderlineError = {style="undercurl",sp=deus.red};
+    LspDiagnosticsUnderlineWarning = {style="undercurl",sp=deus.yellow};
+    LspDiagnosticsUnderlineInformation = {style="undercurl",sp=deus.blue};
+    LspDiagnosticsUnderlineHint = {style="undercurl",sp=deus.cyan};
 
-    CursorWord0 = {bg=zephyr.currsor_bg};
-    CursorWord1 = {bg=zephyr.currsor_bg};
+    CursorWord0 = {bg=deus.currsor_bg};
+    CursorWord1 = {bg=deus.currsor_bg};
 
-    NvimTreeFolderName = {fg=zephyr.blue};
-    NvimTreeRootFolder = {fg=zephyr.red,style='bold'};
-    NvimTreeSpecialFile = {fg=zephyr.fg,bg=zephyr.none,stryle='NONE'};
+    NvimTreeFolderName = {fg=deus.blue};
+    NvimTreeRootFolder = {fg=deus.red,style='bold'};
+    NvimTreeSpecialFile = {fg=deus.fg,bg=deus.none,stryle='NONE'};
 
-    TelescopeBorder = {fg=zephyr.teal};
-    TelescopePromptBorder = {fg=zephyr.blue};
-    TelescopeMatching = {fg=zephyr.teal};
-    TelescopeSelection = {fg=zephyr.yellow,bg=zephyr.bg_highlight,style= 'bold'};
-    TelescopeSelectionCaret = {fg=zephyr.yellow};
-    TelescopeMultiSelection = {fg=zephyr.teal};
+    TelescopeBorder = {fg=deus.teal};
+    TelescopePromptBorder = {fg=deus.blue};
+    TelescopeMatching = {fg=deus.teal};
+    TelescopeSelection = {fg=deus.yellow,bg=deus.bg_highlight,style= 'bold'};
+    TelescopeSelectionCaret = {fg=deus.yellow};
+    TelescopeMultiSelection = {fg=deus.teal};
   }
   return plugin_syntax
 end
@@ -315,29 +315,29 @@ end
 local async_load_plugin
 
 async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
-  zephyr.terminal_color()
-  local syntax = zephyr.load_plugin_syntax()
+  deus.terminal_color()
+  local syntax = deus.load_plugin_syntax()
   for group,colors in pairs(syntax) do
-    zephyr.highlight(group,colors)
+    deus.highlight(group,colors)
   end
   async_load_plugin:close()
 end))
 
-function zephyr.colorscheme()
+function deus.colorscheme()
   vim.api.nvim_command('hi clear')
   if vim.fn.exists('syntax_on') then
     vim.api.nvim_command('syntax reset')
   end
   vim.o.background = 'dark'
   vim.o.termguicolors = true
-  vim.g.colors_name = 'zephyr'
-  local syntax = zephyr.load_syntax()
+  vim.g.colors_name = 'deus'
+  local syntax = deus.load_syntax()
   for group,colors in pairs(syntax) do
-    zephyr.highlight(group,colors)
+    deus.highlight(group,colors)
   end
   async_load_plugin:send()
 end
 
-zephyr.colorscheme()
+deus.colorscheme()
 
-return zephyr
+return deus
