@@ -79,22 +79,22 @@ local zephyr = {
 }
 
 function zephyr.terminal_color()
-  vim.g.terminal_color_0 = zephyr.bg
-  vim.g.terminal_color_1 = zephyr.red
-  vim.g.terminal_color_2 = zephyr.green
-  vim.g.terminal_color_3 = zephyr.yellow
+  vim.g.terminal_color_0 = zephyr.black
+  vim.g.terminal_color_1 = zephyr.red_dark
+  vim.g.terminal_color_2 = zephyr.green_dark
+  vim.g.terminal_color_3 = zephyr.orange
   vim.g.terminal_color_4 = zephyr.blue
-  vim.g.terminal_color_5 = zephyr.violet
-  vim.g.terminal_color_6 = zephyr.cyan
-  vim.g.terminal_color_7 = zephyr.bg1
-  vim.g.terminal_color_8 = zephyr.brown
+  vim.g.terminal_color_5 = zephyr.magenta_dark
+  vim.g.terminal_color_6 = zephyr.teal
+  vim.g.terminal_color_7 = zephyr.gray
+  vim.g.terminal_color_8 = zephyr.gray_dark
   vim.g.terminal_color_9 = zephyr.red
   vim.g.terminal_color_10 = zephyr.green
   vim.g.terminal_color_11 = zephyr.yellow
-  vim.g.terminal_color_12 = zephyr.blue
-  vim.g.terminal_color_13 = zephyr.violet
+  vim.g.terminal_color_12 = zephyr.turqoise
+  vim.g.terminal_color_13 = zephyr.purple
   vim.g.terminal_color_14 = zephyr.cyan
-  vim.g.terminal_color_15 = zephyr.fg
+  vim.g.terminal_color_15 = zephyr.gray_light
 end
 
 function zephyr.highlight(group, color)
@@ -114,12 +114,12 @@ function zephyr.load_syntax()
     SignColumn = {fg=zephyr.fg,bg=zephyr.bg};
     FoldColumn = {fg=zephyr.fg_alt,bg=zephyr.black};
     VertSplit = {fg=zephyr.black,bg=zephyr.bg};
-    Folded = {fg=zephyr.grey,bg=zephyr.bg_highlight};
+    Folded = {fg=zephyr.gray,bg=zephyr.bg_highlight};
     EndOfBuffer = {fg=zephyr.bg,bg=zephyr.none};
     IncSearch = {fg=zephyr.bg1,bg=zephyr.orange,style=zephyr.none};
     Search = {fg=zephyr.bg,bg=zephyr.orange};
     ColorColumn = {fg=zephyr.none,bg=zephyr.bg_highlight};
-    Conceal = {fg=zephyr.grey,bg=zephyr.none};
+    Conceal = {fg=zephyr.gray,bg=zephyr.none};
     Cursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
     vCursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
     iCursor = {fg=zephyr.none,bg=zephyr.none,style='reverse'};
@@ -146,7 +146,7 @@ function zephyr.load_syntax()
     PmenuSel = {fg=zephyr.base0,bg=zephyr.blue};
     PmenuSelBold = {fg=zephyr.base0,g=zephyr.blue};
     PmenuSbar = {fg=zephyr.none,bg=zephyr.base4};
-    PmenuThumb = {fg=zephyr.violet,bg=zephyr.green_light};
+    PmenuThumb = {fg=zephyr.pink,bg=zephyr.green_light};
     WildMenu = {fg=zephyr.fg,bg=zephyr.green};
     Question = {fg=zephyr.yellow};
     NormalFloat = {fg=zephyr.base8,bg=zephyr.bg_highlight};
@@ -154,21 +154,21 @@ function zephyr.load_syntax()
     TabLineFill = {style=zephyr.none};
     TabLineSel = {fg=zephyr.fg,bg=zephyr.blue};
     StatusLine = {fg=zephyr.base8,bg=zephyr.base2,style=zephyr.none};
-    StatusLineNC = {fg=zephyr.grey,bg=zephyr.base2,style=zephyr.none};
+    StatusLineNC = {fg=zephyr.gray,bg=zephyr.base2,style=zephyr.none};
     SpellBad = {fg=zephyr.red,bg=zephyr.none,style='undercurl'};
     SpellCap = {fg=zephyr.blue,bg=zephyr.none,style='undercurl'};
     SpellLocal = {fg=zephyr.cyan,bg=zephyr.none,style='undercurl'};
-    SpellRare = {fg=zephyr.violet,bg=zephyr.none,style = 'undercurl'};
+    SpellRare = {fg=zephyr.pink,bg=zephyr.none,style = 'undercurl'};
     Visual = {style='inverse'};
     VisualNOS = {bg=gray_darker};
-    QuickFixLine = {fg=zephyr.violet,style='bold'};
+    QuickFixLine = {fg=zephyr.pink,style='bold'};
     Debug = {fg=zephyr.orange};
     debugBreakpoint = {fg=zephyr.bg,bg=zephyr.red};
 
     Boolean = {fg=zephyr.purple};
     Number = {fg=zephyr.purple};
     Float = {fg=zephyr.purple};
-    PreProc = {fg=zephyr.violet};
+    PreProc = {fg=zephyr.pink};
     PreCondit = {fg=zephyr.tan};
     Include = {fg=zephyr.blue};
     Define = {fg=zephyr.blue};
@@ -199,7 +199,7 @@ function zephyr.load_syntax()
     SpecialComment = {fg=zephyr.gray};
     Todo = {fg=zephyr.yellow};
     Delimiter = {fg=zephyr.orange};
-    Ignore = {fg=zephyr.grey};
+    Ignore = {fg=zephyr.gray};
     Underlined = {fg=zephyr.none,style='underline'};
 
     DashboardShortCut = {fg=zephyr.magenta};
@@ -220,13 +220,13 @@ function zephyr.load_plugin_syntax()
     TSVariable = {fg=zephyr.navyblue};
     TSPunctBracket = {fg=zephyr.orange};
 
-    vimCommentTitle = {fg=zephyr.grey,style='bold'};
+    vimCommentTitle = {fg=zephyr.gray,style='bold'};
     vimLet = {fg=zephyr.orange};
     vimVar = {fg=zephyr.cyan};
-    vimFunction = {fg=zephyr.redwine};
+    vimFunction = {fg=zephyr.magenta};
     vimIsCommand = {fg=zephyr.fg};
     vimCommand = {fg=zephyr.blue};
-    vimNotFunc = {fg=zephyr.violet,style='bold'};
+    vimNotFunc = {fg=zephyr.pink,style='bold'};
     vimUserFunc = {fg=zephyr.yellow,style='bold'};
     vimFuncName= {fg=zephyr.yellow,style='bold'};
 
@@ -236,25 +236,25 @@ function zephyr.load_plugin_syntax()
     diffOldFile = {fg = zephyr.yellow};
     diffNewFile = {fg = zephyr.orange};
     diffFile    = {fg = zephyr.aqua};
-    diffLine    = {fg = zephyr.grey};
-    diffIndexLine = {fg = zephyr.violet};
+    diffLine    = {fg = zephyr.gray};
+    diffIndexLine = {fg = zephyr.pink};
 
     gitcommitSummary = {fg = zephyr.red};
-    gitcommitUntracked = {fg = zephyr.grey};
-    gitcommitDiscarded = {fg = zephyr.grey};
-    gitcommitSelected = { fg=zephyr.grey};
-    gitcommitUnmerged = { fg=zephyr.grey};
-    gitcommitOnBranch = { fg=zephyr.grey};
-    gitcommitArrow  = {fg = zephyr.grey};
+    gitcommitUntracked = {fg = zephyr.gray};
+    gitcommitDiscarded = {fg = zephyr.gray};
+    gitcommitSelected = { fg=zephyr.gray};
+    gitcommitUnmerged = { fg=zephyr.gray};
+    gitcommitOnBranch = { fg=zephyr.gray};
+    gitcommitArrow  = {fg = zephyr.gray};
     gitcommitFile  = {fg = zephyr.green_dark};
 
-    VistaBracket = {fg=zephyr.grey};
+    VistaBracket = {fg=zephyr.gray};
     VistaChildrenNr = {fg=zephyr.orange};
     VistaKind = {fg=zephyr.purpl};
     VistaScope = {fg=zephyr.red};
     VistaScopeKind = {fg=zephyr.blue};
     VistaTag = {fg=zephyr.magenta,style='bold'};
-    VistaPrefix = {fg=zephyr.grey};
+    VistaPrefix = {fg=zephyr.gray};
     VistaColon = {fg=zephyr.magenta};
     VistaIcon = {fg=zephyr.yellow};
     VistaLineNr = {fg=zephyr.fg};
@@ -262,7 +262,7 @@ function zephyr.load_plugin_syntax()
     GitGutterAdd = {fg=zephyr.green_dark};
     GitGutterChange = {fg=zephyr.blue};
     GitGutterDelete = {fg=zephyr.red};
-    GitGutterChangeDelete = {fg=zephyr.violet};
+    GitGutterChangeDelete = {fg=zephyr.pink};
 
     GitSignsAdd = {fg=zephyr.green_dark};
     GitSignsChange = {fg=zephyr.blue};
