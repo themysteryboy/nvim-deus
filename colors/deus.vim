@@ -1,1 +1,1 @@
-lua require('zephyr')
+lua require('deus')
